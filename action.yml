@@ -1,0 +1,21 @@
+name: 'List Files in Pull Request'
+description: 'List Files in Pull Request'
+author: 'Ankit Jain'
+inputs:
+  githubToken:
+    description: 'Github Token'
+    required: true
+    default: ${{ github.token }}
+  baseURL:
+    description: 'Base URL of github incase of using Github Enterprise'
+    required: false
+  outputFormat:
+    description: 'Output format for the files changed in the Pull Request, It shoud be one of the following "space-delimited", "csv", or "json".'
+    required: false
+    default: 'json'
+outputs:
+  pullRequestFiles:
+    description: 'Contains the list of files changed in the pull request in the required format'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
