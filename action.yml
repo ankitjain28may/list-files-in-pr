@@ -1,6 +1,9 @@
 name: 'List Files in Pull Request'
 description: 'List Files in Pull Request'
 author: 'Ankit Jain'
+branding:
+  icon: 'file-text'  
+  color: 'blue'
 inputs:
   githubToken:
     description: 'Github Token'
