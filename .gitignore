@@ -67,3 +67,4 @@ typings/
 .next
 
 pull-request.json
+.github/workflows/pr.yml

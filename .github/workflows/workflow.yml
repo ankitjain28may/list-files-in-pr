@@ -1,0 +1,12 @@
+name: Builds and tests Workflow
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: npm install
+        run: npm ci
+      - name: npm eslint
+        run: npm run lint
