@@ -68,3 +68,4 @@ typings/
 
 pull-request.json
 .github/workflows/pr.yml
+scratch

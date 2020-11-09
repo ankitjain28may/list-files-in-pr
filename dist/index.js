@@ -5828,7 +5828,6 @@ const params = {
   pr_number: inputHelper.pull_request_no,
 };
 
-
 const pullRequestFiles = [];
 let pullRequestFilesFormat = "";
 const octokit = new Octokit(inputHelper.github);
@@ -5858,6 +5857,9 @@ fetchFilesFromPR(octokit)
         break;
       case "csv":
         pullRequestFilesFormat = pullRequestFiles.join(",");
+        break;
+      case "new-line":
+        pullRequestFilesFormat = pullRequestFiles.join("\\n");
         break;
       case "json":
         pullRequestFilesFormat = JSON.stringify(pullRequestFiles);
@@ -5894,10 +5896,11 @@ function getInputs() {
   if (
     result.outputFormat != "space-delimited" &&
     result.outputFormat != "json" &&
+    result.outputFormat != "new-line" &&
     result.outputFormat != "csv"
   ) {
     throw new Error(
-      "Output Format should be one of the following: space-delimited, json, csv"
+      "Output Format should be one of the following: space-delimited, json, new-line, csv"
     );
   }
   // Github baseURL

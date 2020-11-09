@@ -9,16 +9,16 @@ The output will be available via the `steps` output context.
 Check the [actions.yml](https://github.com/ankitjain28may/list-files-in-pr/blob/master/action.yml) for the complete format of the required inputs and outputs.
 
 ```yaml
-  - uses: ankitjain28may/list-files-in-pr@v1
+  - uses: ankitjain28may/list-files-in-pr@v1.0
     with:
       githubToken: ${{ github.token }}
-      outputFormat: 'json' # It can be csv, space-delimited as well. default is json
+      outputFormat: 'json' # It can be csv, new-line, space-delimited as well. default is json
 ```
 
 ### Get the list of files in a PR
 
 ```yaml
-  - uses: ankitjain28may/list-files-in-pr@v1
+  - uses: ankitjain28may/list-files-in-pr@v1.0
     id: list-files
     with:
       githubToken: ${{ github.token }}

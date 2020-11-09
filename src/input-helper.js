@@ -17,10 +17,11 @@ function getInputs() {
   if (
     result.outputFormat != "space-delimited" &&
     result.outputFormat != "json" &&
+    result.outputFormat != "new-line" &&
     result.outputFormat != "csv"
   ) {
     throw new Error(
-      "Output Format should be one of the following: space-delimited, json, csv"
+      "Output Format should be one of the following: space-delimited, json, new-line, csv"
     );
   }
   // Github baseURL

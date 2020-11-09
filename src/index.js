@@ -33,7 +33,6 @@ const params = {
   pr_number: inputHelper.pull_request_no,
 };
 
-
 const pullRequestFiles = [];
 let pullRequestFilesFormat = "";
 const octokit = new Octokit(inputHelper.github);
@@ -63,6 +62,9 @@ fetchFilesFromPR(octokit)
         break;
       case "csv":
         pullRequestFilesFormat = pullRequestFiles.join(",");
+        break;
+      case "new-line":
+        pullRequestFilesFormat = pullRequestFiles.join("\\n");
         break;
       case "json":
         pullRequestFilesFormat = JSON.stringify(pullRequestFiles);
